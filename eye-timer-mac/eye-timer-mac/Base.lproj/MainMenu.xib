@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="eye_timer_mac" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="O8M-VH-1TX" customClass="StatusMenuController" customModule="eye_timer_mac" customModuleProvider="target">
+            <connections>
+                <outlet property="statusLabel" destination="bA8-fX-fZE" id="6cs-Wf-rcL"/>
+                <outlet property="statusMenu" destination="a3p-Ns-pEH" id="So5-ac-w7Y"/>
+                <outlet property="timeLabel" destination="P1y-Ad-J7F" id="rIA-R7-Cpt"/>
+                <outlet property="timerItem" destination="6Ml-9u-WfG" id="NA8-r3-Oik"/>
+                <outlet property="timerSlider" destination="7N1-jo-ius" id="2cR-oC-OII"/>
+                <outlet property="timerView" destination="jrV-Ju-bni" id="eF8-k6-U9J"/>
+            </connections>
+        </customObject>
+        <menu id="a3p-Ns-pEH" userLabel="Status Menu">
+            <items>
+                <menuItem title="Item" id="6Ml-9u-WfG" userLabel="Timer">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="rFH-q8-GRF"/>
+                <menuItem title="Quit" id="bPK-yc-9B0">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClickedWithSender:" target="O8M-VH-1TX" id="MNf-Yn-SBl"/>
+                    </connections>
+                </menuItem>
+            </items>
+        </menu>
+        <customView id="jrV-Ju-bni" userLabel="Timer View">
+            <rect key="frame" x="0.0" y="0.0" width="168" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcC-Q5-10c">
+                    <rect key="frame" x="18" y="18" width="132" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="7N1-jo-ius"/>
+                    <connections>
+                        <action selector="timeUpdate:" target="O8M-VH-1TX" id="Aue-2e-Y8a"/>
+                    </connections>
+                </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bA8-fX-fZE">
+                    <rect key="frame" x="42" y="0.0" width="84" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Status Label" id="5lX-g9-wk2">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P1y-Ad-J7F">
+                    <rect key="frame" x="47" y="38" width="75" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Time Label" id="dmY-KO-1Wr">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <point key="canvasLocation" x="141" y="285.5"/>
+        </customView>
+    </objects>
+</document>
